@@ -173,5 +173,3 @@ func parseSecp256k1Signature(b []byte) (*ecdsa.Signature, error) {
 	}
 	return ecdsa.ParseDERSignature(b)
 }
-
-
