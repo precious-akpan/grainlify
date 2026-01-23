@@ -43,6 +43,7 @@ import {
 import { SkeletonLoader } from "../../../shared/components/SkeletonLoader";
 import { LanguageIcon } from "../../../shared/components/LanguageIcon";
 
+//types
 interface ProfileData {
   contributions_count: number;
   languages: Array<{ language: string; contribution_count: number }>;
@@ -64,6 +65,7 @@ interface ProfileData {
     tier_color: string;
   };
 }
+
 
 interface Project {
   id: string;
@@ -1398,7 +1400,6 @@ export function ProfilePage({
                 </div>
               )}
             </div>
-          </div>
 
           {/* Most active ecosystems */}
           <div className="backdrop-blur-[40px] bg-white/[0.12] rounded-[24px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-6">
