@@ -125,6 +125,7 @@ interface ModalButtonProps {
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary';
   className?: string;
+  disabled?: boolean;
 }
 
 export function ModalButton({
@@ -132,7 +133,8 @@ export function ModalButton({
   onClick,
   type = 'button',
   variant = 'secondary',
-  className = ''
+  className = '',
+  disabled = false
 }: ModalButtonProps) {
   const { theme } = useTheme();
 
@@ -141,7 +143,8 @@ export function ModalButton({
       <button
         type={type}
         onClick={onClick}
-        className={`px-4 md:px-5 py-2.5 rounded-[10px] md:rounded-[12px] bg-gradient-to-br from-[#c9983a] to-[#a67c2e] text-white font-medium text-[13px] md:text-[14px] shadow-[0_6px_20px_rgba(162,121,44,0.35)] hover:shadow-[0_8px_24px_rgba(162,121,44,0.5)] transition-all border border-white/10 hover:scale-[1.02] active:scale-100 flex items-center justify-center gap-2 touch-manipulation min-h-[44px] w-full sm:w-auto ${className}`}
+        disabled={disabled}
+        className={`px-4 md:px-5 py-2.5 rounded-[10px] md:rounded-[12px] bg-gradient-to-br from-[#c9983a] to-[#a67c2e] text-white font-medium text-[13px] md:text-[14px] shadow-[0_6px_20px_rgba(162,121,44,0.35)] hover:shadow-[0_8px_24px_rgba(162,121,44,0.5)] transition-all border border-white/10 hover:scale-[1.02] active:scale-100 flex items-center justify-center gap-2 touch-manipulation min-h-[44px] w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${className}`}
       >
         {children}
       </button>
@@ -152,7 +155,8 @@ export function ModalButton({
     <button
       type={type}
       onClick={onClick}
-      className={`px-4 md:px-5 py-2.5 rounded-[10px] md:rounded-[12px] backdrop-blur-[20px] border font-medium text-[13px] md:text-[14px] transition-all hover:scale-[1.02] active:scale-100 touch-manipulation min-h-[44px] w-full sm:w-auto ${theme === 'dark'
+      disabled={disabled}
+      className={`px-4 md:px-5 py-2.5 rounded-[10px] md:rounded-[12px] backdrop-blur-[20px] border font-medium text-[13px] md:text-[14px] transition-all hover:scale-[1.02] active:scale-100 touch-manipulation min-h-[44px] w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${theme === 'dark'
           ? 'bg-white/[0.08] border-white/15 text-[#d4d4d4] hover:bg-white/[0.12] active:bg-white/[0.15]'
           : 'bg-white/[0.15] border-white/25 text-[#7a6b5a] hover:bg-white/[0.2] active:bg-white/[0.25]'
         } ${className}`}
