@@ -22,7 +22,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: contracts/bounty_escrow/contracts/escrow
+        working-directory: contracts/bounty_escrow
 
     steps:
       - name: Checkout code
@@ -60,21 +60,25 @@ jobs:
       - name: Check code formatting
         run: |
           source $HOME/.cargo/env
+          cd contracts/escrow
           cargo fmt --check --all
 
       - name: Build contracts
         run: |
           source $HOME/.cargo/env
+          cd contracts/escrow
           cargo build --release --target wasm32v1-none
 
       - name: Run tests
         run: |
           source $HOME/.cargo/env
+          cd contracts/escrow
           cargo test --verbose --lib
 
       - name: Build Soroban contract
         run: |
           source $HOME/.cargo/env
+          cd contracts/escrow
           stellar contract build --verbose
 
       - name: Stellar build check
