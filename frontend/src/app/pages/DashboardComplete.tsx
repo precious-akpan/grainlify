@@ -534,10 +534,12 @@ function DiscoverPage() {
                 </button>
               </div>
 
-              <h4 className={`text-[18px] font-bold mb-2 transition-colors ${theme === 'dark' ? 'text-[#f5f5f5]' : 'text-[#2d2820]'
-                }`}>{project.name}</h4>
-              <p className={`text-[13px] mb-4 line-clamp-2 transition-colors ${theme === 'dark' ? 'text-[#d4d4d4]' : 'text-[#7a6b5a]'
-                }`}>{project.description}</p>
+              <h4 className={`text-[18px] font-bold mb-2 transition-colors ${
+                theme === 'dark' ? 'text-[#f5f5f5]' : 'text-[#2d2820]'
+              }`}>{project.name}</h4>
+              <p className={`text-[13px] mb-4 line-clamp-2 transition-colors ${
+                theme === 'dark' ? 'text-[#d4d4d4]' : 'text-[#7a6b5a]'
+              }`}>{project.description?.trim() || "No description"}</p>
 
               <div className={`flex items-center space-x-4 text-[13px] mb-4 transition-colors ${theme === 'dark' ? 'text-[#d4d4d4]' : 'text-[#7a6b5a]'
                 }`}>
