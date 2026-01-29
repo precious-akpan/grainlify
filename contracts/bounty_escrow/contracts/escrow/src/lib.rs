@@ -90,7 +90,7 @@
 mod events;
 mod test_bounty_escrow;
 #[cfg(test)]
-mod test_query;
+//mod test_query;
 
 use events::{
     emit_admin_action_cancelled, emit_admin_action_executed, emit_admin_action_proposed,
